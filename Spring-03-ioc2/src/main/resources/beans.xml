@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 别名，如果添加别名可以使用别名获取到对象-->
+    <alias name="user" alias="asdas" />
+
+    <!--
+    id:bean的唯一标识符，相当于对象名
+    class:bean对象所对应的全限定名 包名+类名
+    name:别名,name可以同时取多个别名
+    -->
+    <bean id="userT" class="com.zhao.pojo.UserT" name="userT2,u2 u3;u4">
+        <property name="name" value="张三" />
+    </bean>
+
+<!--    <bean id="user" class="com.zhao.pojo.User">-->
+<!--&lt;!&ndash;        <property name="name" value="李四" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        下标赋值&ndash;&gt;-->
+<!--        <constructor-arg index="0" value="王五" />-->
+<!--     </bean>-->
+
+<!-- 通过类型创建-->
+<!--    <bean id="user" class="com.zhao.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="王五" />-->
+<!--    </bean>-->
+
+<!--直接通过参数名来设置    -->
+    <bean id="user" class="com.zhao.pojo.User">
+        <constructor-arg name="name" value="王五" />
+    </bean>
+
+    <bean id="userT" class="com.zhao.pojo.UserT">
+
+    </bean>
+
+</beans>
